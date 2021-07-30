@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Collections.ObjectModel;
 
 namespace CardLinq {
-    class Deck : ObservableCollection<Card>
+    public class Deck : ObservableCollection<Card>
     {
         private static Random RNG = new Random();
 

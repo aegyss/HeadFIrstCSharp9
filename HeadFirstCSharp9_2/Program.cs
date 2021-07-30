@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Collections.Generic;
 
-namespace HeadFirstCSharp9_2
+namespace HeadFirstCSharp9_02
 {
     class Program
     {

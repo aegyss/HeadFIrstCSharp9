@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace HeadFirstCSharp9_2
+namespace HeadFirstCSharp9_02
 {
     class PrintWhenGetting
     {

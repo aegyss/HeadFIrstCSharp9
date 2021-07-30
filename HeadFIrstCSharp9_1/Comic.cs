@@ -2,16 +2,20 @@
 using System.Collections.Generic;   
 using System.Text;
 using System.Linq;
+using System.Diagnostics.CodeAnalysis;
 
-namespace HeadFirstCSharp9_1
+namespace HeadFirstCSharp9_01
 {
-    class Comic
+
+
+    public class Comic 
     {
+
         public string Name { get; set; }
         public int Issue { get; set; }
         public static readonly IReadOnlyDictionary<int, decimal> Prices = new Dictionary<int, decimal>
         {
-            { 6, 3600M },
+            { 6, 3600M },   
             { 19, 500M },
             { 36, 650M },
             { 57, 13525M },
@@ -32,7 +36,34 @@ namespace HeadFirstCSharp9_1
             new Comic {Name = "The Death of the Object", Issue = 97 },
         };
 
+        public static readonly IEnumerable<Review> Reviews = new List<Review>
+        {
+            new Review() { Issue = 36, Critic = Critics.MuddyCritic, Score = 37.6},
+            new Review() { Issue = 74, Critic = Critics.RottenTornadoes, Score = 22.8},
+            new Review() { Issue = 74, Critic = Critics.MuddyCritic, Score = 84.2 },
+            new Review() { Issue = 83, Critic = Critics.RottenTornadoes, Score = 89.4 },
+            new Review() { Issue = 97, Critic = Critics.MuddyCritic, Score = 98.1 },
+        };
         public override string ToString() => $"{Name} (Issue #{Issue}).";
+
+    }
+
+    public enum PriceRange
+    {
+        Cheap,
+        Expensive,
+    }
+
+    public class Review
+    {
+        public int Issue { get; set; }
+        public Critics Critic { get; set; }
+        public double Score { get; set; }
+    }
+
+    public enum Critics
+    {
+        RottenTornadoes,
+        MuddyCritic,
     }
 }
-3600
